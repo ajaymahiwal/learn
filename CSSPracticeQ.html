@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <style>
+        h1{
+            color: #ffa511;
+            text-decoration: underline teal double 10px;
+            text-align: center;
+            /* font-family: 'League Spartan', sans-serif; */
+            font-family: league spartan;
+            font-size: 55px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
+
+        input[type="checkbox"]:checked + label{
+            color: darkgreen;
+        }
+
+        .box{
+            width: 250px;
+            height: 250px;
+            background-color: rgb(23, 197, 197);
+            /* border-radius: 20px / 40px; */
+            /* border-radius: 10px 5% / 20px 30px; */
+            /* border-radius: 10% 30% 50% 70%; */
+            border-radius: 99% 0% 100% 0% / 100% 0% 100% 0% ;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    
+    <h1 class="head">APNA</h1>
+    <h1 class="head">COLLEGE</h1>
+    <br>
+    <hr>
+    <hr>
+    <br>
+    <div>
+        <input type="checkbox" id="yes" name="choice" value="yes"> 
+        <label for="yes">Yes</label>
+        <input type="checkbox" id="no" name="choice" value="no">
+        <label for="no">No</label>
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        table{
+            border: 1px solid black;
+            margin: auto;
+            /* border-collapse: collapse;
+            border-collapse: collapse; */
+        }
+        th{
+            padding: 5px 20px;
+            border: 1px solid black;
+            /* border-collapse: collapse; */
+            
+        }
+        td{
+            /* border-collapse: collapse; */
+            padding: 4px 20px;
+            border: 1px solid black;
+            border-collapse: collapse;
+            height: 3rem;
+        }
+        tr{
+            /* border-collapse: collapse; */
+            /* width: 5rem; */
+            border: 1px solid black;
+        }
+        .in-tab{
+            padding: 0;
+            border-style: none;
+
+        }
+        .tb{
+            width: 100%;
+            border: none;
+            /* border-collapse: collapse;  */
+        }
+        .in-tab-1{
+            padding: 5px 0px;        
+            border:1px solid black;
+
+        }
+        #tuesday table{
+            /* padding: 0; */
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <table border="" cellspacing="0">
+        <thead>
+            <tr>
+                <th rowspan="3">Day</th>
+                <th colspan="6">Seminar</th>
+            </tr>
+            <tr>
+                <th colspan="2">Schedule</th>
+                <th rowspan="2" colspan="4">Topic</th>
+            </tr>
+            <tr>
+                <th colspan="">Begin</th>
+                <th colspan="">End</th>
+            </tr>
+        </thead>
+
+         <tbody>
+            <tr>
+                <td rowspan="2">Monday</td>
+                <td rowspan="2">8:00 a.m.</td>
+                <td rowspan="2">5:00 p.m.</td>
+                
+                <td class="in-tab" rowspan="">
+                    <table border="" class="tb" cellspacing="0">
+                        <tr><td class="in-tab-1">Introduction to XML</td></tr>
+                        <tr><td class="in-tab-1">Validity DTD and Relax NG</td></tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                
+            </tr>
+            <tr>
+               <td rowspan="3">Tuesday</td>
+               <td>8:00 a.m.</td>
+               <td>11:00 a.m.</td>
+               <td class="in-tab" rowspan="3" id="tuesday">
+                <table border="" class="tb" cellspacing="0">
+                   <tr><td class="in-tab-1">XPath</td></tr>
+                    <tr><td class="in-tab-1">XSL Transformations</td></tr>
+                </table>
+               </td>
+            </tr>
+            <tr>
+                <td>11:00 a.m.</td>
+                <td>2:00 p.m.</td>
+            </tr>
+            <tr>
+                <td>2:00 p.m.</td>
+                <td>5:00 p.m.</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>8:00 a.m.</td>
+                <td>12:00 p.m.</td>
+                <td class="in-tab-1">XSL Formatting Objects</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

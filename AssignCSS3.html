@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 150px;
+        height: 300px;
+        background-color: greenyellow;
+        border: 15px dotted black;
+        /* background-clip:content-box; */
+        margin-top: 20px;
+        margin-right: 1em;
+        margin-bottom: 40px;
+        margin-left: 2em;
+        padding: 1em;
+      }
+
+      .circle {
+        height: 100px;
+        width: 100px;
+        background-color: pink;
+        border: 2px solid black;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      @counter-style bodo {
+        system: alphabetic; /*  alphabetic, fixed, cyclic  */
+        symbols: "\915""\916""\917""\918""\919""\91A""\91B""\91C""\91D""\91E""\91F""\920""\921""\922""\923""\924""\925""\926""\927""\928""\92A""\92B""\92C""\92D""\92E""\92F""\930""\932""\935""\936""\937""\938""\939";
+        /* symbols: 'क' 'ख' 'ग' 'घ' 'ङ' 'च' 'छ' 'ज' 'झ' 'ञ' 'ट' 'ठ' 'ड' 'ढ' 'ण' 'त' 'थ' 'द' 'ध' 'न' 'प' 'फ' 'ब' 'भ' 'म' 'य' 'र' 'ल' 'व' 'श' 'ष' 'स' 'ह' */
+        suffix: ") ";
+      }
+
+      @counter-style winner-list{
+        system:fixed;
+        symbols:"\1F947""\1F948""\1F949"; /*CSS code*/
+        suffix:" "; 
+      }
+
+      .gameW-name{
+        list-style-type: winner-list;
+      }
+      li {
+        /* display: inline; */
+        /* display: list-item; */ /* BY default for list items li elements */
+        /* list-style:circle; */
+        /* list-style-image: linear-gradient(to left bottom, red, blue); */
+        list-style-type: bodo;
+      }
+      /* 
+        ul {
+            list-style: none;
+        }
+
+        ul li::before {
+            content: "+ ";
+        } */
+    </style>
+  </head>
+  <body>
+    <div class="box" id="box-1"></div>
+
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <ul>
+        <li class="gameW-name" title="Gold Winner">Ajay</li>
+        <li class="gameW-name" title="Silver Winner">Mahiwal</li>
+        <li class="gameW-name" title="Bronze Winner">Gargi</li>
+        <li class="gameW-name">Om</li>
+        <li class="gameW-name">Shiva</li>
+    </ul>
+
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>MongoDB</li>
+      <li>React</li>
+      <li>Java</li>
+      <li>Python</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>MongoDB</li>
+      <li>React</li>
+      <li>Java</li>
+      <li>Python</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>MongoDB</li>
+      <li>React</li>
+      <li>Java</li>
+      <li>Python</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>MongoDB</li>
+      <li>React</li>
+      <li>Java</li>
+      <li>Python</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>MongoDB</li>
+      <li>React</li>
+      <li>Java</li>
+      <li>Python</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>MongoDB</li>
+      <li>React</li>
+      <li>Java</li>
+      <li>Python</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>MongoDB</li>
+      <li>React</li>
+      <li>Java</li>
+      <li>Python</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>MongoDB</li>
+      <li>React</li>
+      <li>Java</li>
+      <li>Python</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>MongoDB</li>
+      <li>React</li>
+      <li>Java</li>
+      <li>Python</li>
+    </ul>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, modi.
+      Distinctio obcaecati aut soluta nobis?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, modi.
+      Distinctio obcaecati aut soluta nobis?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, modi.
+      Distinctio obcaecati aut soluta nobis?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, modi.
+      Distinctio obcaecati aut soluta nobis?
+    </p>
+  </body>
+</html>

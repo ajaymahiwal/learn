@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        /* input[type="range"] {
+   transform: rotateZ(270deg);
+} */
+    </style>
+</head>
+
+<body>
+    <form action="/server">
+        <div>
+            <label for="photo">Choose file to upload</label>
+            <input type="file" name="profile-img" id="photo" accept="image/*" capture="user" />
+            <pre style="color: blue;">
+                multiple    accept=".jpg, .jpeg, .png"   capture="user" or "environment"
+
+                A valid case-insensitive filename extension, starting with a period (".") character. For example: .jpg, .pdf, or .doc.
+    
+                FOr capture : Note these work better on mobile devices; if your device is a desktop computer, you'll likely get a typical file picker.
+            </pre>
+        </div>
+        <br />
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" value="" />
+        </div>
+        <br />
+        <fieldset>
+            <legend>Hobbies:</legend>
+            <label for="html">HTML<input type="checkbox" name="html" id="html" /></label>
+            <label for="css">CSS<input type="checkbox" name="css" id="css" /></label>
+            <label for="JavaScript">JavaScript<input type="checkbox" name="JavaScript" id="JavaScript" /></label>
+            <label for="ReactJS">ReactJS<input type="checkbox" name="ReactJS" id="ReactJS" /></label>
+        </fieldset>
+        <button>Submit</button>
+        <br />
+        <br />
+        <fieldset>
+            <legend>Hobbies:</legend>
+            <label for="html1">HTML<input type="checkbox" name="hobby" id="html1" value="HTML" /></label>
+            <label for="css2">CSS<input type="checkbox" name="hobby" id="css2" value="CSS" /></label>
+            <label for3="JavaScript">JavaScript<input type="checkbox" name="hobby" id="JavaScript3"
+                    value="JavaScript" /></label>
+            <label for="ReactJS4">ReactJS<input type="checkbox" name="hobby" id="ReactJS4" value="ReactJS" /></label>
+        </fieldset>
+        <br />
+        <fieldset>
+            <legend>Gender:</legend>
+            <label for="male">Male<input type="radio" name="gen" id="male" /></label>
+            <label for="female">Female<input type="radio" name="gen" id="female" /></label>
+            <label for="other">Other<input type="radio" name="gen" id="other" /></label>
+        </fieldset>
+
+        <label for="color">Color</label>
+        <input type="color" list="colors" name="selectedColor" id="color" />
+        <datalist id="colors">
+            <option value="#ffff00"></option>
+            <option value="#800000"></option>
+            <option value="#8B0000"></option>
+            <option value="#A52A2A"></option>
+            <option value="#DC143C"></option>
+        </datalist>
+        <br />
+        <br />
+        <label for="tick">Tip amount:</label>
+        <input type="range" list="tickmarks" min="0" max="100" id="tick" name="tick" />
+        <datalist id="tickmarks">
+            <option value="0"></option>
+            <option value="10"></option>
+            <option value="20"></option>
+            <option value="30"></option>
+        </datalist>
+
+        <br />
+        <label for="city">Enter Your City Name:</label>
+        <input type="text" list="citiesName" id="city" name="city" />
+        <datalist id="citiesName">
+            <option value="Narwana"></option>
+            <option value="Delhi"></option>
+            <option value="Mumbai"></option>
+            <option value="Gurugram"></option>
+            <option value="Baguluru"></option>
+        </datalist>
+        <br>
+        
+  <label for="temp1">Temperature for room 1:</label>
+  <input type="range" id="temp1" name="temp1" list="values" />
+</p>
+<p>
+  <label for="temp2">Temperature for room 2:</label>
+  <input type="range" id="temp2" name="temp2" list="values" />
+</p>
+
+<p>
+  <label for="temp3">Temperature for room 3:</label>
+  <input type="range" id="temp3" name="temp3" list="values" />
+</p>
+
+<datalist id="values">
+  <option value="0" label="0"></option>
+  <option value="25" label="25"></option>
+  <option value="50" label="50"></option>
+  <option value="75" label="75"></option>
+  <option value="100" label="100"></option>
+</datalist>
+<p style="color:blue">However, the label content will not be displayed by default. You can use CSS to show the labels and to position them correctly.</p>
+
+        <br />
+        <label for="temp">Room Temp.</label>
+        <input type="range" list="temps" id="temp" name="temp" />
+        <datalist id="temps">
+            <option value="0"></option>
+            <option value="10"></option>
+            <option value="20"></option>
+            <option value="30"></option>
+            <option value="40"></option>
+        </datalist>
+        <br />
+        <button>Submit</button>
+    </form>
+
+    <br />
+    <br />
+    <h1>Redirect its search request to Youtube</h1>
+    <hr />
+    <br />
+    <form action="https://www.youtube.com/results">
+        <input type="text" name="search_query" placeholder="Search On Youtube" />
+        <button>Search Now</button>
+    </form>
+    <h1>Redirect its search request to Google</h1>
+    <hr />
+    <br />
+    <form action="https://www.google.com/search">
+        <input type="text" name="q" placeholder="Search On Google" />
+        <button>Search Now</button>
+    </form>
+    <h1>Redirect its search request to InstaGram</h1>
+    <hr />
+    <br />
+    <form action="https://www.instagram.com/">
+        <input type="text" placeholder="Search On InstaGram" />
+        <button>Search Now</button>
+    </form>
+
+    <br />
+    <br />
+
+    <br />
+</body>
+
+</html>

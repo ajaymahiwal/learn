@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Eczar&display=swap" rel="stylesheet">
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+        h1{
+            letter-spacing: .6rem;
+            font-family: 'Anton', sans-serif;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 5rem;
+        }
+        h1::before{
+            content: "Ajay Mahiwal";
+            position: absolute;
+            /* background-color: red; */
+            top: -10px;
+            left: -5px;
+            z-index: -1;
+            -webkit-text-stroke: 2px;
+            -webkit-text-stroke-color: rgb(88, 83, 83);
+            color: transparent;
+            transition: 0.3s ease-in-out;
+
+        }
+
+        h1:hover::before{
+            top:0;
+            left:0;
+            text-decoration: underline black double 4px;
+            /* color: blue; */
+        }
+    </style>
+</head>
+<body>
+    <h1>Ajay Mahiwal</h1>
+</body>
+</html>
