@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            font-size: 7rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ajay Mahiwal</h1>
+    <script>
+        let h1 = document.querySelector("h1");
+            // USING PROMISEs
+        /*
+        function changeColor(color,delay){
+            return new Promise((resolve, reject)=>{
+                setTimeout(()=>{
+                    h1.style.color=color;
+                    resolve("Color Changed");
+                },delay)
+            })
+        }
+
+        let request = changeColor("red",1000);
+        console.log(request);
+        request.then((msg)=>{
+            console.log(msg);
+            return changeColor("blueviolet",1000);
+        })
+        .then((msg)=>{
+            console.log(msg);
+        })
+        */
+
+        //Using async and await
+        function changeColor(color,delay){
+            return new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    let num = Math.ceil(Math.random()*5);
+                    if(num>3){
+                        reject("Promise Reject ho gyi hai Ab");
+                    }
+                    else{
+                        h1.style.color=color;
+                    console.log(`Color Changed to ${color}`);
+                    resolve("Promise Resolved !! and Change ho Gya WOW !");
+                    }
+
+                }, delay);
+            })
+        }
+
+        //YE CODE ak dum execute ker dega sab ko koi kisi ki wait nhi ker rha
+        // async function demo(){
+        //     changeColor("red",1000);
+        //     changeColor("yellow",1000);
+        //     changeColor("blueviolet",1000);
+
+        //     return "Done!";
+        // }
+
+        
+        async function demo(){
+            try{
+                await changeColor("red",1000);
+                await changeColor("yellow",1000);
+                await changeColor("blueviolet",1000);
+            }catch(err){
+                console.log("Error Caught");
+                console.log(err);
+            }
+
+            let a = 10;
+            let b= 10;
+            console.log(`Sum of ${a} and ${b} is: ${a+b}`);
+            return "Done!";
+        }
+        let request = demo();
+        // console.log(request);
+    </script>
+</body>
+</html>

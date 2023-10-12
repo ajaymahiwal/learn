@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            /* font-size: 4rem; */
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div:nth-of-type(1){
+            background-color: rgb(186, 226, 43);
+        }
+        #dogIMG{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cat Facts</h1>
+    <h2 id="h21"></h2>
+    <h1>Joke For You</h1>
+    <h2 id="h22"></h2>
+
+    <div>
+        <h1>Image</h1>
+        <img src="" alt="">
+    </div>
+
+    <div>
+        <h1 style="display:inline-block">DOG IMAGE</h1>
+        <button>GIVE ME A NEW PICTURE</button>
+        <img src="" id="dogIMG" alt="">
+    </div>
+
+    <!-- LINKING Axios Library -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script>
+        let h21 = document.querySelector("#h21");
+        let h22 = document.querySelector("#h22");
+        let img = document.querySelector("img");
+        let dogIMG = document.querySelector("#dogIMG");
+        let btn = document.querySelector("button");
+
+        var newFact ="";
+        var newJoke ="";
+        var newJokeID;
+        let url = "https://catfact.ninja/fact";
+        fetch(url)
+        .then((raw)=>{
+            console.log(raw);
+            return raw.json();
+        })
+        .then((data)=>{
+            console.log(data);
+            newFact = data.fact;
+            h21.innerText= newFact;
+        })
+        .catch((error)=>{
+            console.log(error);
+            console.log("Error AA gyii Hai Broo");
+        });
+
+        let url2 = "https://icanhazdadjoke.com/";
+        fetch(url2, {
+	        headers: {
+                'Accept' : 'application/json',
+            }
+        })
+        .then((raw)=>{
+            console.log(raw);
+            return raw.json();
+        })
+        .then((data)=>{
+            console.log(data);
+            newJoke = data.joke;
+            newJokeID=data.id;
+            h22.innerText=newJoke;
+            let url3 = `https://icanhazdadjoke.com/j/${newJokeID}.png`;
+            console.log(url3);
+            img.setAttribute("src",url3);
+        })
+        .catch((error)=>{
+            console.log("Koi Joke Nhi AA skata Ab Error AA gyi Hai");
+        })
+
+        async function callToAPI(){
+            try{
+                let rawData = await fetch(url);
+                let data = await rawData.json();
+                console.log("Using Async Await Result:",data);
+                console.log(data.fact);
+            }
+            catch(e){
+                console.log("Kuch Error aa gyii or error hai",e);
+            }
+        }
+
+        callToAPI();
+
+        let dogURL = "https://dog.ceo/api/breeds/image/random";
+        btn.addEventListener("click",async ()=>{
+            let linkOfImg = await getLink();
+            dogIMG.setAttribute("src",linkOfImg);
+        })
+
+        async function getLink(){
+            try{
+                let response =  await axios.get(dogURL);
+                console.log("DOG ",response);
+                return response.data.message;
+            }
+            catch(e){
+                console.log("Error AA gyii",e);
+                return "No Image Found";
+            }
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        async function greet(){
+            throw "404 Page Not Found"; //throw is used to throw any random error
+            return "Hello IndCoders";
+        }
+
+        let request = greet();
+        console.log(request);
+        request.then((result)=>{
+            console.log("Resolved ! Hai Sab");
+            console.log("result is:",result);
+        })
+        .catch((err)=>{
+            console.log("Rejected ! Ho gya");
+            console.log("Given Error Msg :",err);
+        })
+
+
+        let demo = async()=>{
+            console.log("I Am Arrow Function");
+        }
+        // console.log(demo());
+    </script>
+</body>
+</html>

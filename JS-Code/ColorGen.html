@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            width: 50%;
+            height: 200px;
+            margin: 30px auto;
+            border: 2px solid black;
+        }
+        body{
+            text-align: center;
+        }
+        button{
+            margin-top: 30px;
+            padding: 5px 8px;
+        }
+    </style>
+</head>
+<body>
+    <button>Generate Color</button>
+    <p>This is Your NEW Color !</p>
+
+    <script>
+        let colorCode = document.createElement("h1");
+        colorCode.innerHTML="RGB";
+        document.body.prepend(colorCode);
+        let p = document.querySelector("p");
+        let btn = document.querySelector("button");
+        btn.addEventListener("click",function(){
+            let randomCol = getColor();
+            p.style.backgroundColor=randomCol;
+        });
+
+        function getColor(){
+            let red = Math.floor(Math.random()*256);
+            let green = Math.floor(Math.random()*256);
+            let blue = Math.floor(Math.random()*256);
+
+            colorCode.innerHTML=`RGB(${red},${green},${blue})`;
+            console.log("Color Updated to: ",red,green,blue);
+            let random = `rgb(${red},${green},${blue})`;
+            return random;
+        }
+    </script>
+</body>
+</html>

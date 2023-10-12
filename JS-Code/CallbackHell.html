@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Ajay Mahiwal</h1>
+    <script>
+        let h1 = document.querySelector("h1");
+
+
+        // setTimeout(()=>{
+        //     h1.style.color="red";
+        // },1000);
+        // setTimeout(()=>{
+        //     h1.style.color="yellow";
+        // },2000);
+        // setTimeout(()=>{
+        //     h1.style.color="green";
+        // },3000);
+        
+
+        //ye funx to Asyncronously work Nhi krega 
+        function colorChange1(color){
+            h1.style.color = color;
+        }
+
+        /*
+        // setTimeout(colorChange1("red"), 1000);
+        // setTimeout(colorChange1("yellow"), 2000);
+        // setTimeout(colorChange1("green"), 3000);
+
+        In the above code, you're immediately invoking the colorChange function and passing its result (undefined) as the callback to setTimeout. As a result, the color changes are executed synchronously and not after the specified timeouts.
+        
+        */
+
+        // setTimeout(()=>{   colorChange1("red");      },1000);
+        // setTimeout(()=>{   colorChange1("yellow");   },2000);
+        // setTimeout(()=>{   colorChange1("green");    },3000);
+
+
+        function colorChange2(color,delay){
+            setTimeout(()=>{
+                h1.style.color=color;
+            },delay);
+        }
+
+        colorChange2("pink",1000);
+        colorChange2("red",2000);
+        colorChange2("black",3000);
+
+
+        //dependienc kerne k liye hum callback ka use krege nextChangeColor
+        // yani ak color succufully change ho gya to next color lga dena ager callback nhi diyaa to next change nhi hoga kuch bhi color , isliye vo if vali line llikhi hai
+        function colorChange(color,delay,nextChangeColor){
+            setTimeout(()=>{
+                h1.style.color=color;
+                if(nextChangeColor){
+                    nextChangeColor();
+                }
+            },delay);
+        }
+
+        // colorChange("blue",1000,()=>{
+        //     colorChange("aqua",1000,()=>{
+        //         colorChange("salmon",1000);
+        //     });
+        // });
+
+
+
+    //   function saveToDB(data, success, failure) {
+    //     let internetSpeed = Math.ceil(Math.random() * 10);
+    //     // console.log("Internet Speed", internetSpeed);
+    //     if (internetSpeed > 4) {
+    //       success();
+    //     } else {
+    //       failure();
+    //     }
+    //   }
+
+    //   saveToDB(
+    //     "Name:AjayMahiwal",
+    //     () => {
+    //       console.log("Data1 Saved SuccessFully !");
+    //       saveToDB(
+    //         "Age:20",
+    //         () => {
+    //           console.log("Data2 Saved SuccessFully !");
+    //         },
+    //         () => {
+    //           console.log("Not Saved");
+    //         }
+    //       );
+    //     },
+    //     () => {
+    //       console.log("Not Saved");
+    //     }
+    //   );
+
+
+
+        function saveToDB(value){
+            return new Promise((resolve,reject)=>{  //return a object 
+                let internetSpeed = Math.ceil(Math.random()*10);
+                // console.log("Net Speed:"+internetSpeed);
+                if(internetSpeed>4){
+                    resolve("Resolved HO GYA!");
+                }else{
+                    reject("Rejected HO GYA!");
+                }
+            });
+        }
+
+        let request = saveToDB("Name:AjayMahiwal");  // request =  promise object
+        console.log(request);
+
+        /*
+        request.then((result)=>{
+            console.log("Data1 Saved");
+            saveToDB("age:10").then((result)=>{
+                console.log("Data2 Saved");
+                saveToDB("hiiiiii").then((result)=>{
+                    console.log("Data3 Saved");
+                })
+            })
+        })
+        .catch((error)=>{
+            console.log("Not Saved");
+        });
+        */
+
+
+        //IMPROVED VERSION
+        
+        request.then((result)=>{
+            console.log("Data1 Saved Ho Gya Hai !");
+            return saveToDB("Age:20");
+            // console.log(result);
+        }).then((result)=>{
+            console.log("Data2 Saved Ho Gya Hai !");
+            return saveToDB("Height:5.5ft");
+        }).then((result)=>{
+            console.log("Data3 Saved Ho Gya Hai !");
+        })
+        .catch((error)=>{
+            console.log("Not Saved !");
+            // console.log(error);
+        });
+        
+      
+    </script>
+  </body>
+</html>

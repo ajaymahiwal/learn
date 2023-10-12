@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="input-group mb-3 mt-5">
+        <input type="text" class="form-control" placeholder="Enter Your Location" aria-label="Recipient's username" aria-describedby="button-addon2" id="location">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+    </div>
+    <img src="" alt="">
+    <h2>
+
+    </h2>
+
+
+                        <!-- Bootstrap Link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"  integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"  crossorigin="anonymous"></script>
+                        <!-- LINKING Axios Library -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+    <!-- My JavaScript -->
+    <script>
+        let userLoc = document.querySelector("#location");
+        let btn = document.querySelector("#button-addon2");
+        let h2 = document.querySelector("h2");
+        let img = document.querySelector("img");
+
+
+        let url = "http://api.weatherapi.com/v1/current.json?key=f7459ac86b3341dea3b12847231108&q=";
+
+        
+        btn.addEventListener("click",async ()=>{
+            let wheather = await getWeather(userLoc.value);
+            // console.log(wheather.current.feelslike_c);
+            let cond = wheather.current;
+            let icon = cond.condition.icon;
+            img.setAttribute("src",icon);
+            h2.innerText=`Tempratute in C: ${cond.feelslike_c}`
+
+        });
+        
+        async function getWeather(loc){
+            let res = await axios.get(url+loc);
+            console.log(res);
+            console.log(res.data);
+            return res.data;
+            // console.log(res.data.current.condition.text);
+            // let icon = res.data.current.condition;
+            // console.log(icon.icon)
+        }
+    </script>
+</body>
+</html>

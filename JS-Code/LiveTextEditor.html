@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .paraDesign{
+            width:60%;
+            margin: 30px auto;
+            min-height: 50px;
+            border: 2px solid black;
+            border-radius: 5px;
+            word-break: break-all;
+            word-wrap: break-word;
+        }
+        .empty::before {
+            content: "WriteSomething Which is in Your Mind not in Your Heart Because.....";
+            color: #999;
+        }
+
+        input,button{
+            padding: 6px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Text Editor</h1>
+    <p id="para" contenteditable="true"></p>
+    <form action="backenddjjd.com/" id="form-1">
+        <input type="text">
+        <button>Save</button>
+    </form>
+
+    <script>
+        const formBody = document.getElementById("form-1");
+        const textBox = document.getElementById("para");
+
+        formBody.addEventListener("submit",function(event){
+            event.preventDefault();
+        })
+        formBody.addEventListener("input",function(event){
+            console.log(this.elements[0].value);
+            textBox.classList.add("paraDesign");
+            textBox.innerText=this.elements[0].value;
+        });
+
+        formBody.elements[0].addEventListener("input",function(event){
+            if(this.value.trim()===""){
+                textBox.classList.add("empty");
+            }else{
+                textBox.classList.remove("empty");
+            }
+        });
+
+        textBox.addEventListener("input",function(event){
+            if(this.textContent.trim()===""){
+                textBox.classList.add("empty");
+                console.log("Para is Empty");
+            }else{
+                textBox.classList.remove("empty");
+                console.log("Para is Not Empty");
+            }
+        })
+    </script>
+</body>
+</html>

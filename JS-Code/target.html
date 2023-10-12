@@ -1,0 +1,42 @@
+
+
+<!-- https://medium.com/@etherealm/currenttarget-vs-target-in-js-2f3fd3a543e5#:~:text=currentTarget%20tells%20us%20on%20which,on%20click%20of%20the%20element. -->
+
+<!-- Date 02-08-23 -->
+
+<!-- HERE IS ALL ABOUT event.currentTarget And event.target -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onclick="myFunction(event)">
+    <p>Click on a paragraph. An alert box will alert the element whose eventlistener triggered the event.</p>
+    <p><strong>Note:</strong> The currentTarget property does not necessarily return the element that was clicked on, but the element whose eventlistener triggered the event.</p>
+
+    <div onclick="myFunction11(event)">
+    <h1>Hello World !</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia quis debitis officia obcaecati repellat placeat sunt, aut expedita reprehenderit omnis accusantium, quisquam itaque? Voluptate blanditiis eius nemo quas, deserunt aperiam.</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit labore iste accusantium ratione non repudiandae vel natus, omnis quis, dolores maiores illo obcaecati expedita numquam sequi laborum ut ad minus.</span>
+    </div>
+</body>
+    <script>
+      function myFunction(event) { 
+        console.log(event.currentTarget.nodeName); // body
+        console.log(event.target.nodeName); // strong
+      }
+      function myFunction11(event) { 
+        console.log(event.currentTarget.nodeName); // body
+        console.log(event.target.nodeName); // strong
+      }
+    </script>
+</html>

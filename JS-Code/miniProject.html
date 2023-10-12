@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Website</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.form-container {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 80% {
+    transform: translateX(10px);
+  }
+  30%, 50%, 70% {
+    transform: translateX(-5px);
+  }
+  40%, 60% {
+    transform: translateX(5px);
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="form-container" id="formContainer">
+    <form id="emailForm" onsubmit="submitForm(); return false;">
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(function () {
+    var formContainer = document.getElementById("formContainer");
+    formContainer.style.display = "block";
+    
+    document.addEventListener("click", function (event) {
+      if (!formContainer.contains(event.target)) {
+        formContainer.classList.add("shake");
+        setTimeout(function () {
+          formContainer.classList.remove("shake");
+        }, 500);
+      }
+    });
+  }, 10000);
+});
+
+function submitForm() {
+  var emailInput = document.getElementById("email");
+  var formContainer = document.getElementById("formContainer");
+
+  // Check if the email is empty
+  if (emailInput.value.trim() === "") {
+    formContainer.classList.add("shake");
+    setTimeout(function () {
+      formContainer.classList.remove("shake");
+    }, 500);
+    return;
+  }
+
+  // Here, you can handle the form submission, for example, using AJAX to send the email to the server.
+  // After the form submission is complete, you can hide the form again using formContainer.style.display = "none";
+  formContainer.style.display = "none";
+}
+
+  </script>
+</body>
+</html>

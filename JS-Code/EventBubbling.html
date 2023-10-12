@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .size{
+            font-size: 2rem;
+            padding: 5px 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <button id="btn1">Button 1</button>
+        <button id="btn2">Button 2</button>
+      </div>
+      <!-- <ul id="todoList">
+        <li>Task 1</li>
+        <li>Task 2</li>
+        <li>Task 3</li>
+      </ul> -->
+      <ul id="todoList">
+        <li>Task 1 <button class="delete-btn">Delete</button></li>
+        <li>Task 2 <button class="delete-btn">Delete</button></li>
+        <li>Task 3 <button class="delete-btn">Delete</button></li>
+      </ul>
+      
+    <script>
+
+
+const todoList = document.getElementById("todoList");
+
+// Event delegation for "Delete" button clicks
+todoList.addEventListener("click", (event) => {
+  if (event.target.classList.contains("delete-btn")) {
+    // Perform delete action for the specific task
+    event.target.classList.add("size");
+    // Prevent the click event from bubbling to the parent <li> element
+        console.log("Delete task:", event.target.parentElement.textContent);
+        event.stopPropagation();
+    }
+});
+
+
+const parentDiv = document.getElementById("parent");
+
+// Event listener for the parent element
+parentDiv.addEventListener("click", (event) => {
+  // Event handling logic for both buttons (event delegation)
+  console.log("I am Parent Of These Buttons");
+  const clickedElement = event.target;
+  if (clickedElement.nodeName === "BUTTON") {
+    console.log("Button clicked:", clickedElement.id);
+    clickedElement.classList.toggle("size");
+  }
+});
+
+const todoList1 = document.getElementById("todoList");
+
+// Event listener for the parent element
+todoList1.addEventListener("click", (event) => {
+  // Check if the event occurred on an <li> element
+  if (event.target.nodeName === "LI") {
+    // Perform action for clicked <li> element
+    console.log("Clicked task:", event.target.textContent);
+  }
+});
+
+
+    </script>
+</body>
+</html>
