@@ -1,0 +1,19 @@
+
+        body{
+            background-color:rgba(128, 255, 0, 0.8);
+            text-align: center;
+        }
+        h1{
+            font-size: 6rem;
+        }
+        #clock{
+            font-size: 7rem;
+            border: 3px solid black;
+        }
+        #date{
+            font-size: 4rem;
+        }
+        #day{
+            font-size: 4rem;
+            text-decoration: 2px underline black wavy;
+        }
