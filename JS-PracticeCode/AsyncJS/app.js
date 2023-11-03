@@ -1,3 +1,6 @@
+
+
+
 // console.log("Hello World");
 
 let h1 = document.querySelector("h1");
@@ -109,9 +112,72 @@ async function change() {
     return "Done";
 }
 
-let demo = change();
-console.log(demo);
+// let demo = change();
+// console.log(demo);
 
 async function dolly(){
     return "Hello Jii Kese Hoo Aap.";
 }
+
+
+
+
+let url_1 = "https://catfact.ninja/fact";
+let url_2 = "https://icanhazdadjoke.com/";
+
+
+async function getJoke(){
+    let raw = await fetch(url_2,{headers:{
+        'accept':'application/json',
+    }});
+    console.log(raw);
+    let data = await raw.json();
+    console.log(data);
+}
+
+// getJoke();
+
+
+
+// Call API's Using fetch or axios
+async function getFact1(){
+    let raw = await fetch(url_1);
+    console.log(raw);
+    let data = await raw.json();
+    console.log(data);
+}
+
+async function getFact2(){
+    let json = await axios.get(url_1);
+    console.log(json);
+    console.log(json.data);
+}
+
+
+async function getFact(){
+    console.log("Get Fact using fetch");
+    await getFact1();
+    console.log("Get Fact using axios library");
+    await getFact2();
+}
+// getFact();
+
+
+
+// Promise and axios
+// Working but i think not good way because what if not able or error aa gyi to koi other way hai hi nhi handle kerne ka not even try catch because hum direct res() send ker rhe hai ager error hui to error vala hi object jayega or fir error aa jayegi or program stop.
+function getAnotherFact(){
+    return new Promise((res,rej)=>{
+        console.log("Promise and Axios");
+        res(axios.get(url_1));
+    })
+}
+
+getAnotherFact()
+.then((result)=>{
+    console.log(result);
+    console.log(result.data);
+})
+.catch((err)=>{
+    console.log(err);
+})
