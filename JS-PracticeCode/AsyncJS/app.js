@@ -181,3 +181,8 @@ getAnotherFact()
 .catch((err)=>{
     console.log(err);
 })
+
+// Time pass
+h1.addEventListener("click",()=>{
+    h1.classList.toggle("size");
+});

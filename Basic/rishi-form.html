@@ -1,0 +1,490 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Basic Setup */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        height: 100%;
+        width: 100%;
+      }
+      body {
+        height: 100%;
+        width: 100%;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      :root{
+        --common-wd: 90%;
+      }
+      .ul {
+        border-bottom: 2px solid black;
+        width: fit-content;
+      }
+      /* Text Styles */
+
+      .heading {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: 1.2rem;
+        font-weight: bolder;
+        text-align: center;
+      }
+
+      /* main page */
+
+      .main-page {
+        padding: 3rem 2rem;
+      }
+      .sub-page-1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .top {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .txt-c{
+        text-align: center;
+      }
+
+      .application-form{
+        margin-top: .5rem;
+        width: var(--common-wd);
+      }
+      .af-1{
+        text-indent: 3.3rem;
+      }
+
+      .name{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.2rem;
+      }
+      .empty{
+        border-bottom: 2px solid black;
+        flex-grow: 1;
+      }
+
+      .photo{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        width: 8rem;
+        height: 10rem;
+        border: 2px solid black;
+      }
+
+      .flex{
+        display: flex;
+        justify-content: space-between;
+        gap: 0.5rem;
+      }
+      .details{
+        flex-grow: 1;
+      }
+
+
+      .undertaking-form{
+        width: calc(var(--common-wd) + 5%);
+        margin-top: .5rem;
+      }
+      .uf-main{
+        word-spacing: 1ch;
+      }
+      .uf-top{
+        text-align: center;
+        font-weight: 600;
+      }
+      .under{
+        font-size: 1.2rem;
+      }
+
+      .flex-1{
+        margin-top: 1rem;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+      }
+      .flex-right{
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
+
+      .edu-info{
+        width: calc(var(--common-wd) + 5%);
+      }
+      
+
+      th{
+        padding: .2rem 2rem;
+      }
+      .custom-td{
+        padding: .5rem 2rem;
+    }
+    #table-2 td{
+          padding: 0rem 2rem;
+      }
+
+      .bold{
+        font-size: 1.1rem;
+        font-weight: bolder;
+      }
+      .table-bottom-txt{
+        margin-left: 6rem;
+      }
+
+      .empty-place{
+        word-break: break-all;
+        word-wrap: break-word;
+      }
+
+      .s-flex{
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+      }
+
+
+
+
+      .office{
+        width: calc(var(--common-wd));
+      }
+      .office h2{
+        margin: 0 auto;
+      }
+      .office-sign{
+        margin-inline: 4rem;
+        margin-top: .5rem;
+      }
+      .flex-spc-bw{
+        display: flex;
+        justify-content: space-between;
+      }
+      .mb-1{
+        margin-bottom: 1rem;
+      }
+      .mt-1{
+        margin-top: 1rem;
+      }
+
+
+
+
+
+
+      .sub-page-2 {
+        width: 100%;
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .page-2-main{
+        width: calc(var(--common-wd) - 5%);
+      }
+      .flex-txt-right{
+        margin-top: .5rem;
+        width: calc(var(--common-wd) - 5%);
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
+      .page-end{
+        width: calc(var(--common-wd) - 5%);
+      }
+      .page-end p{
+        margin-block: .5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-page">
+      <div class="sub-page-1">
+        <div class="top">
+          <p class="heading ul">
+            Padma Shri Vishnu Prabhakar District Library, Hisar
+          </p>
+          <p class="heading ul">(Haryana)</p>
+          <a href="mailto:districtlibraryhisar@gmail.com " class="ul"
+            >E-Mail: districtlibraryhisar@gmail.com
+          </a>
+        </div>
+
+        <div class="application-form">
+            <p class="txt-c"> (Application for Membership) </p>
+            <p class="af-1">I make the application for membership of the district library, Hisar under the library rules which I have read & abide by them. </p>
+            <div class="flex">
+                <div class="details">
+                    <div class="name">
+                        <p>Name(in block letter)</p>
+                        <p class="empty"></p>
+                    </div>
+                    <div class="name">
+                        <p>Son/Daughter/Wife of Sh.</p>
+                        <p class="empty"></p>
+                    </div>
+                    <div class="name">
+                        <p>D.O.B.</p>
+                        <p class="empty"></p>
+                        <p>Age</p>
+                        <p class="empty"></p>
+                        <p>Years, Occupation</p>
+                        <p class="empty"></p>
+                    </div>
+                    <div class="name">
+                        <p>Permanent Address</p>
+                        <p class="empty"></p>
+                    </div>
+                    <div class="name">
+                        <p>Temporary Address</p>
+                        <p class="empty"></p>
+                    </div>
+                    <div class="name">
+                        <p>E- Mail ID </p>
+                        <p class="empty"></p>
+                        <p>Ph. No.</p>
+                        <p class="empty"></p>
+                    </div>
+                    <div class="name">
+                        <p>Aadhar No.</p>
+                        <p class="empty"></p>
+                    </div>
+                </div>
+                <div class="photo">
+                    <p>Affix Here</p>
+                    <p>Attested Photo</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="undertaking-form">
+            <div class="uf-top">
+                <p><u class="under">Undertaking</u></p>
+                <p>(For Govt., Semi Govt. Employee/ Public) </p>
+            </div>
+            <p class="uf-main">I ……………….declare that Sh. / Smt. ……………….. Son/Daughter/Wife of Sh. ……………..Is a permanent/temporary resident of this above mention address/is a fit & proper fit & enrolment as member of library. I further undertake the full responsibility to deposit the book & other dues, if he/she fails to do so.</p>
+
+            <div class="flex-1">
+                <p>Place: -…………………………   Date: ……………………… </p>
+                <p>Signature with seal </p>
+            </div>
+            <div class="flex-right">
+                <div>
+                    <p>Full Address ………………………………………………</p>
+                <p>Contact No. & E-Mail ……………………………………</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="edu-info">
+            <h2>1. Educational Qualification: </h2>
+            <table border="1" cellspacing="0" id="table-1">
+                <tr>
+                    <th><u>Course</u></th>
+                    <th><u>University/Board</u></th>
+                    <th><u>Year of Passing</u></th>
+                    <th><u>Result</u></th>
+                </tr>
+                
+                <tr>
+                    <td class="custom-td"></td>
+                    <td class="custom-td"></td>
+                    <td class="custom-td"></td>
+                    <td class="custom-td"></td>
+                </tr>
+                <tr>
+                    <td class="custom-td"></td>
+                    <td class="custom-td"></td>
+                    <td class="custom-td"></td>
+                    <td class="custom-td"></td>
+                </tr>
+                <tr>
+                    <td class="custom-td"></td>
+                    <td class="custom-td"></td>
+                    <td class="custom-td"></td>
+                    <td class="custom-td"></td>
+                </tr>
+            </table>
+
+            <p class="table-bottom-txt">
+                <span class="bold">Category of user:</span> <span>Are you preparing for competition exam or engage in any survey/re-search <br> work? If yes, Describe here:- </span>
+            </p>
+
+            <p class="empty-place">…………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………… </p>
+
+            <div class="s-flex"><h2>2. Achievement if any:-  </h2> <span> academic/competitive exam/research work. </span></div>
+
+            <p class="empty-place">………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………… </p>
+
+            <div class="flex-right">
+                <div>
+                    <p>…………………………</p>
+                    <p><b> Signature of Applicant </b></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="office">
+            <h2 class="ul">For Office Use Only</h2>
+            <p><b>1) I/we examined his/her data after verification. I/we is/are in view that he/she may be allowed for library membership.</b> </p>
+
+            <div class="office-sign">
+                <p>Yes Allowed</p>
+                <div class="flex-spc-bw">
+                    <p>DDO/Librarian </p>
+                    <p>Signature</p>
+                </div>
+            </div>
+
+            <div>
+                2) Received a sum of Rs.500/-vide receipt no..................of Book No....................Date, as refundable subject to clearance all due after three years & within one Year after expiry of membership. Library cum Identity card issued to Library member no...........  
+            </div>
+
+            <div class="flex-spc-bw office-sign mb-1">
+                <p>Senior Librarian</p>
+                <p>Registration Assistant </p>
+            </div>
+
+            <p>I received the library card and hold myself responsible for book, use of internet services and other services of library. I will follow all rules and regulations of I.T. services as well state Govt. & Govt. of India's I. T. Act sand all governing bodies.</p>
+            <p class="date">Date: - </p>
+
+            <div class="flex-spc-bw office-sign">
+                <p>Place: - </p>
+                <p>Signature of Applicant </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="sub-page-2">
+        <div class="top">
+            <p class="heading ul">
+              Padma Shri Vishnu Prabhakar District Library, Hisar
+            </p>
+            <p class="heading ul">(Haryana)</p>
+            <a href="mailto:districtlibraryhisar@gmail.com " class="ul"
+              >E-Mail: districtlibraryhisar@gmail.com
+            </a>
+        </div>
+
+          <div class="uf-top mt-1">
+            <p><u class="under">Undertaking</u></p>
+        </div>
+
+        <div class="page-2-main">
+            This identity library card issued to member is subjected renewal after every year. If any member does not renew it continuously two years his/her membership will stand canceled automatically and his/her library security amount will be lapsed after deducting any kind of dues pending toward users. 
+        </div>
+
+        <div class="flex-txt-right">
+            <p>Signature of Candidate</p> 
+        </div>
+
+        <div class="page-end">
+            <p>Renewal Record:- </p>
+
+            <table border="1" cellspacing="0"  id="table-2">
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Renewal Date</th>
+                    <th>Valid up to</th>
+                    <th>Sign of Candidate</th>
+                    <th>Sign of Librarian</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </div>
+  </body>
+</html> -->
